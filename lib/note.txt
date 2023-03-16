@@ -1,0 +1,41 @@
+first use get package
+ 1,i learn in MVC pettarn
+ 2 , use for state management in flutter use in controller
+      example are avaiable in shopping_cart and cartcontroller
+
+3,  create controller for show data
+
+4, Shopping page 
+    instance mean put contrllar data in get contrllar
+      final shoppingpageData =Get.put(shoping_controllar());
+      final cardControllers=Get.put(CartController()); 
+
+Getx:-
+    this reactive approch ,obs,stream,autoupdate,normal,
+                 GetX<CartController>(
+                    builder: (controller) {
+                      return Text('Total Amount \$${controller.totalPrice} ',style: TextStyle(fontSize: 20),);
+                    }
+                  ),
+
+
+   mainly use three function data in screen  GetBuilder,getx,obx that show below
+
+GetBuilder:-this is classic approch is use for ligth or , normal type, setState(),Menual update, Lighter weigth,
+
+                  GetBuilder<CartController>(builder: (controller){
+                    return Text('Total Amount \$${controller.testvalue} ',style: TextStyle(fontSize: 20),);
+                  }),
+  
+code in controller
+        var testvalue=0.0;  // use for get builder in as like a getx but little bit difference
+    testvalue=totalPrice; // this line is use for get builder
+    update();  // this function is use for update value
+
+
+Obx :- as like a Getx,
+    very simple concept access value in direct cart class controller
+     
+       Obx((){
+                    return Text(cardControllers.totalPrice.toString(),style: TextStyle(fontSize: 30),);
+                  }),
